@@ -10,7 +10,16 @@ app.get('/', (req,res) => {
     });
 });
 const root = {
-    hello: () => 'Hello welcome to GraphQL'
+   item: () => {
+       return {
+           id: '123123',
+          text: 'This is hacker new Item',
+          timeISO: '2 pm tuedsy',
+          time:132213,
+          title: 'Graphql learning',
+          deleted: false
+       }
+   }
 };
 app.use('/graphql', graphqlHTTP({
     schema : schema,
