@@ -16,6 +16,7 @@ type User{
     email: String
     age: Int!
     gender: Gender
+    items: [HackerNewsItem]
 }
 enum Gender{
     MALE
@@ -27,6 +28,14 @@ enum Gender{
    getUser(id: ID): User
    users: [User]
  }
+ input HackerNewsItemInput{
+    id: String
+    text: String
+    timeISO: String
+    time: Int
+    title: String
+    deleted: Boolean
+ }
  input UserInput{
     id: ID
     firstName: String!
@@ -34,6 +43,7 @@ enum Gender{
     email: String
     age: Int!
     gender: Gender
+    items: [HackerNewsItemInput]
  }
  type Mutation{
      createUser(input: UserInput) : User
