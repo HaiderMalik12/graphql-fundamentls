@@ -14,6 +14,7 @@ type User{
     firstName: String!
     lastName: String!
     email: String
+    age: Int!
 }
  type Query {
    item: HackerNewsItem
@@ -25,6 +26,7 @@ type User{
     firstName: String!
     lastName: String!
     email: String
+    age: Int!
  }
  type Mutation{
      createUser(input: UserInput) : User
