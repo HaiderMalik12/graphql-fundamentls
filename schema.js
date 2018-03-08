@@ -15,6 +15,12 @@ type User{
     lastName: String!
     email: String
     age: Int!
+    gender: Gender
+}
+enum Gender{
+    MALE
+    FEMALE
+    OTHER
 }
  type Query {
    item: HackerNewsItem
@@ -27,6 +33,7 @@ type User{
     lastName: String!
     email: String
     age: Int!
+    gender: Gender
  }
  type Mutation{
      createUser(input: UserInput) : User
