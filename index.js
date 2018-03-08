@@ -9,6 +9,8 @@ app.get("/", (req, res) => {
     msg: "Welcome to GraphQL World!!"
   });
 });
+const users = [];
+let user = {};
 const root = {
   item: () => {
     return {
@@ -33,6 +35,14 @@ const root = {
         }
       ]
     };
+  },
+  users: () => {
+    return users;
+  },
+  createUser: ({ input }) => {
+    user = input;
+    users.push(user);
+    return user;
   }
 };
 app.use(
