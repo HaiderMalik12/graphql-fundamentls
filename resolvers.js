@@ -12,7 +12,7 @@ export const resolvers = {
         deleted: false
       };
     },
-    getUser: ({id}) => {
+    getUser: (_,{id}) => {
       return users.find(user => user.id === id);
     },
     users: () => {
@@ -20,7 +20,7 @@ export const resolvers = {
     },
   },
   Mutation:{
-    createUser: ({ input }) => {
+    createUser: (_, {input}) => {
       user = input;
       users.push(user);
       return user;
