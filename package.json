@@ -20,6 +20,7 @@
     "express-graphql": "^0.6.12",
     "graphql": "^0.13.1",
     "graphql-tools": "^2.21.0",
+    "mongoose": "^5.0.9",
     "nodemon": "^1.17.1"
   }
 }
