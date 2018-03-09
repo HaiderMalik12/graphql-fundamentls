@@ -1,6 +1,7 @@
-import {buildSchema} from 'graphql';
+import {makeExecutableSchema} from 'graphql-tools';
+import {resolvers} from './resolvers';
 
-const schema = buildSchema(`
+const tyepDefs = `
 type HackerNewsItem {
     id: String
     text: String
@@ -48,6 +49,7 @@ enum Gender{
  type Mutation{
      createUser(input: UserInput) : User
  }
-`);
+`;
+const schema = makeExecutableSchema({typeDefs, resolvers})
 
-export default schema;
+export default {schema};
