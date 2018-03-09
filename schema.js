@@ -1,7 +1,7 @@
 import {makeExecutableSchema} from 'graphql-tools';
 import {resolvers} from './resolvers';
 
-const tyepDefs = `
+const typeDefs = `
 type HackerNewsItem {
     id: String
     text: String
@@ -52,4 +52,4 @@ enum Gender{
 `;
 const schema = makeExecutableSchema({typeDefs, resolvers})
 
-export default {schema};
+export default schema;
