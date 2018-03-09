@@ -27,7 +27,7 @@ enum Gender{
  type Query {
    getItem(id: ID!): HackerNewsItem
    getUser(id: ID): User
-   users: [User]
+   getUsers: [User]
  }
  input HackerNewsItemInput{
     id: String

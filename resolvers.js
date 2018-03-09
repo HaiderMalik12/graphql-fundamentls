@@ -7,11 +7,11 @@ export const resolvers = {
     getItem: async (_, {id}) => {
     return await Item.findOne({_id: id});
     },
-    getUser: (_,{id}) => {
-      return users.find(user => user.id === id);
+    getUser: async(_,{id}) => {
+      return await User.findById(id);
     },
-    users: () => {
-      return users;
+    getUsers: async() => {
+      return await User.find().populate('items');
     },
   },
   Mutation:{
