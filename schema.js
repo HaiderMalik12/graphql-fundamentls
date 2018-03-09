@@ -25,7 +25,7 @@ enum Gender{
     OTHER
 }
  type Query {
-   item: HackerNewsItem
+   getItem(id: ID!): HackerNewsItem
    getUser(id: ID): User
    users: [User]
  }

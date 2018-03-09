@@ -3,15 +3,8 @@ let user = {};
 import Item from './models/item';
 export const resolvers = {
   Query :{
-    item: () => {
-      return {
-        id: "123123",
-        text: "This is hacker new Item",
-        timeISO: "2 pm tuedsy",
-        time: 132213,
-        title: "Graphql learning",
-        deleted: false
-      };
+    getItem: async (_, {id}) => {
+    return await Item.findOne({_id: id});
     },
     getUser: (_,{id}) => {
       return users.find(user => user.id === id);
