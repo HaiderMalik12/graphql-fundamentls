@@ -2,6 +2,7 @@ const users = [];
 let user = {};
 import Item from './models/item';
 import User from './models/user';
+import Post from './sequelize/post';
 export const resolvers = {
   Query :{
     getItem: async (_, {id}) => {
@@ -13,6 +14,9 @@ export const resolvers = {
     getUsers: async() => {
       return await User.find().populate('items');
     },
+    getPosts: async () =>{
+      return await Post.findAll();
+    }
   },
   Mutation:{
     createUser: async (_, {input}) => {
@@ -27,6 +31,9 @@ export const resolvers = {
     },
     deleteUser: async (_, {id})=> {
     return await User.findOneAndRemove({_id: id});
+    },
+    createPost: async(_, {input}) => {
+      return await Post.create(input);
     }
   }
 };
