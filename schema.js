@@ -49,6 +49,7 @@ enum Gender{
  type Mutation{
      createUser(input: UserInput) : User
      updateUser(input: UserInput) : User
+     deleteUser(id: ID!): User
      createItem(input: HackerNewsItemInput) : HackerNewsItem
  }
 `;
