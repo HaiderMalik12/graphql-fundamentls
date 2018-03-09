@@ -44,7 +44,7 @@ enum Gender{
     email: String
     age: Int!
     gender: Gender
-    items: [HackerNewsItemInput]
+    items: [ID!]
  }
  type Mutation{
      createUser(input: UserInput) : User
