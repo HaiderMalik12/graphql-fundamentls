@@ -21,6 +21,9 @@ export const resolvers = {
     },
     createItem: (_, {input}) => {
      return Promise.resolve(Item.create(input));
+    },
+    updateUser: async (_, {input}) => {
+    return await User.findOneAndUpdate({_id: input.id},input,{new:true})
     }
   }
 };
